@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DFishLoader.Plugin", "DFishLoader.Plugin\DFishLoader.Plugin.csproj", "{457C7F46-B025-4A1D-B50E-17FE3E073973}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DFishLoader", "DFishLoader\DFishLoader.csproj", "{4F8418C8-3182-4561-933E-142AAA8BC6BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DFishLoader.Example", "DFishLoader.Example\DFishLoader.Example.csproj", "{B48B9866-F1E0-452F-BD37-7B16DF93DF93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{457C7F46-B025-4A1D-B50E-17FE3E073973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{457C7F46-B025-4A1D-B50E-17FE3E073973}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{457C7F46-B025-4A1D-B50E-17FE3E073973}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{457C7F46-B025-4A1D-B50E-17FE3E073973}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F8418C8-3182-4561-933E-142AAA8BC6BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F8418C8-3182-4561-933E-142AAA8BC6BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F8418C8-3182-4561-933E-142AAA8BC6BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F8418C8-3182-4561-933E-142AAA8BC6BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B48B9866-F1E0-452F-BD37-7B16DF93DF93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B48B9866-F1E0-452F-BD37-7B16DF93DF93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B48B9866-F1E0-452F-BD37-7B16DF93DF93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B48B9866-F1E0-452F-BD37-7B16DF93DF93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
