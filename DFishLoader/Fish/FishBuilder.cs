@@ -28,6 +28,7 @@ public sealed class FishBuilder {
 		this.SetAberration(false);
 		this._itemData.aberrations = new List<FishItemData>();
 		this._itemData.dimensions = new List<Vector2Int>();
+		this._itemData.cellsExcludedFromDisplayingInfection = new List<Vector2Int>();
 		this._itemData.itemOwnPrerequisites = new List<OwnedItemResearchablePrerequisite>();
 		this._itemData.platformSpecificSpriteOverrides = new Dictionary<Platform, Sprite>();
 		this._itemData.itemInsaneTitleKey = new LocalizedString();
@@ -99,9 +100,16 @@ public sealed class FishBuilder {
 		return this;
 	}
 
-	public FishBuilder SetDimensions(IEnumerable<Vector2Int> dimensions) {
+	public FishBuilder SetDimensions(
+		IEnumerable<Vector2Int> dimensions,
+		[CanBeNull] IEnumerable<Vector2Int> excludedFromInfection = null
+	) {
 		this._itemData.dimensions.Clear();
 		this._itemData.dimensions.AddRange(dimensions);
+		if (excludedFromInfection != null) {
+			this._itemData.cellsExcludedFromDisplayingInfection.Clear();
+			this._itemData.cellsExcludedFromDisplayingInfection.AddRange(excludedFromInfection);
+		}
 		return this;
 	}
 
