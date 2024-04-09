@@ -27,11 +27,12 @@ public class FishBinding : IFishBinding {
 	
 	public void Load() {
 		this._logger.LogInfo("Loading fish data...");
+		
+		this._validator.Initialize();
 
 		var loaders = this._mediator.GetLoaders()
 			.Where(loader => !loader.IsLoaded)
 			.ToList();
-		
 		loaders.ForEach(this.FirePrimaryLoad);
 		this._loaders.AddRange(loaders.Where(this.FirePostLoad));
 	}
@@ -82,5 +83,20 @@ public class FishBinding : IFishBinding {
 			
 			yield return fish;
 		}
+	}
+
+	public void HandleLoadGrid(SerializableGrid grid) {
+		var itemManager = GameManager.Instance.ItemManager;
+		if (!itemManager._hasLoadedItems) {
+			this._logger.LogWarning("Items failed to load, cannot validate grid contents!");
+			return;
+		}
+
+		grid.spatialItems.RemoveAll(item => {
+			if (item.GetItemData<SpatialItemData>() != null)
+				return false;
+			this._logger.LogWarning($"Item '{item.id}' is invalid, removing from storage.");
+			return true;
+		});
 	}
 }

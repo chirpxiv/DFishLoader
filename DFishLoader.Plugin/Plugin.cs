@@ -5,13 +5,14 @@ using BepInEx;
 
 using HarmonyLib;
 
+using DFishLoader.API;
 using DFishLoader.Plugin.Core;
 
 namespace DFishLoader.Plugin;
 
 [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
 public class Plugin : BaseUnityPlugin {
-	internal static FishBinding Binding;
+	internal static IFishBinding Binding;
 	
 	private void Awake() {
 		Binding = DFishLoader.Bind<FishBinding>(this.Logger);
